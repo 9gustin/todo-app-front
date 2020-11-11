@@ -1,0 +1,21 @@
+boton add
+boton delete all
+boton default
+boton eliminar uno
+
+Listado de todos
+item de listado
+
+Navbar de pestañas
+item de navbar
+
+input
+formulario nuevo(input + boton)
+
+header 
+footer
+
+
+//Validaciones
+todo debe contener texto de
+no se puede repetir el mismo todo
