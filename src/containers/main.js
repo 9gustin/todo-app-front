@@ -11,15 +11,15 @@ const Main = props => {
         let todoList;
         switch (activeTab) {
             case 'active': {
-                todoList = (<ActiveList todos={todos}/>)
+                todoList = (<ActiveList todos={todos} handleToggleCompleted={todoFunctions.toggleTodoCompleted}/>)
                 break;
             }
             case 'completed': {
-                todoList = (<CompletedList todos={todos} handleDelete={todoFunctions.deleteTodo} handleDeleteCompleted={todoFunctions.deleteCompleted}/>)
+                todoList = (<CompletedList todos={todos} handleToggleCompleted={todoFunctions.toggleTodoCompleted} handleDelete={todoFunctions.deleteTodo} handleDeleteCompleted={todoFunctions.deleteCompleted}/>)
                 break;
             }
             default: {
-                todoList = (<AllList todos={todos}/>)
+                todoList = (<AllList todos={todos} handleToggleCompleted={todoFunctions.toggleTodoCompleted}/>)
             }
         }
 

@@ -26,11 +26,13 @@ const Home = props => {
     setGlobalProps(props => ({ ...props, todos }));
   }
 
-  const completeTodo = todo => {
+  const toggleTodoCompleted = todo => {
+
     let todos = globalProps.todos.map(t => {
-      if (t.id === todo.id) t.complete();
+      if (t.id === todo.id) t.toggleCompleted();
       return t;
     });
+
     setGlobalProps(props => ({ ...props, todos }));
   }
 
@@ -38,7 +40,7 @@ const Home = props => {
   return (
     <>
       <Header title={globalProps.title} handleTabChange={handleTabChange} />
-      <Main todos={globalProps.todos} activeTab={globalProps.activeTab} todoFunctions={{ addTodo, completeTodo, deleteTodo, deleteCompleted }} />
+      <Main todos={globalProps.todos} activeTab={globalProps.activeTab} todoFunctions={{ addTodo, toggleTodoCompleted, deleteTodo, deleteCompleted }} />
       <Footer text={globalProps.footerText} />
     </>
   );

@@ -9,6 +9,9 @@ export default class Todo{
             this._completed = config.completed;
         }
     }
+    toggleCompleted(){
+        this._completed = !this._completed;
+    }
     complete(){
         this._completed = true;
     }
