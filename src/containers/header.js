@@ -5,7 +5,7 @@ const Header = props => {
     return (
         <header>
             <PrincipalTitle text={props.title}/>
-            <Navbar />
+            <Navbar handleTabChange={props.handleTabChange}/>
         </header>
     );
 };

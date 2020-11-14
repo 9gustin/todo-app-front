@@ -1,11 +1,13 @@
 import {NavbarItem} from './navbarItems';
 
 const Navbar = props => {
+    const handleTabChange = props.handleTabChange;
     const items = [
-        {name: 'All', handleClick: () => {console.log('All')}},
-        {name: 'Active', handleClick: () => {console.log('Active')}},
-        {name: 'Completed', handleClick: () => {console.log('Completed')}}
-    ]
+        {name: 'All', handleClick: () => {handleTabChange('all')}},
+        {name: 'Active', handleClick: () => {handleTabChange('active')}},
+        {name: 'Completed', handleClick: () => {handleTabChange('completed')}}
+    ];
+
     return (
         <nav>
             <ul>

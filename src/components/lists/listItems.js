@@ -4,7 +4,7 @@ const ListItem = props => {
 
     return (
         <li>
-            {item}
+            {item.name}
             {props.actions}
         </li>
     );

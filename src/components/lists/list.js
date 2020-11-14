@@ -1,25 +1,40 @@
-const AllList = () => {
+import { useState } from "react";
+import { ListItem } from "./listItems";
+
+const AllList = (props) => {
+    const [todos, setTodos] = useState(props.todos);
+
     return (
-        <div>
-            
-        </div>
+        <ul>
+            {todos.map((todo) => (
+                <ListItem item={todo} />
+            ))}
+        </ul>
     );
 };
 
-const ActiveList = () => {
+const ActiveList = (props) => {
+    const [todos, setTodos] = useState(props.todos);
+
     return (
-        <div>
-            
-        </div>
+        <ul>
+            {todos.filter(todo => !todo.completed).map((todo) => (
+                <ListItem item={todo} />
+            ))}
+        </ul>
     );
 };
 
-const CompletedList = () => {
+const CompletedList = (props) => {
+    const [todos, setTodos] = useState(props.todos);
+
     return (
-        <div>
-            
-        </div>
+        <ul>
+            {todos.filter(todo => todo.completed).map((todo) => (
+                <ListItem item={todo} />
+            ))}
+        </ul>
     );
 };
 
-export {AllList, ActiveList, CompletedList};
+export { AllList, ActiveList, CompletedList };
