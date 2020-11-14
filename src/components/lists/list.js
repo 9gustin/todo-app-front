@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { ListItem } from "./listItems";
+import { IconDelete } from "../texts/icons";
+import { DeleteAllButton } from "../forms/formItems";
 
 const AllList = (props) => {
-    const [todos, setTodos] = useState(props.todos);
+    const todos = props.todos;
 
     return (
         <ul>
@@ -14,7 +15,7 @@ const AllList = (props) => {
 };
 
 const ActiveList = (props) => {
-    const [todos, setTodos] = useState(props.todos);
+    const todos = props.todos;
 
     return (
         <ul>
@@ -26,14 +27,21 @@ const ActiveList = (props) => {
 };
 
 const CompletedList = (props) => {
-    const [todos, setTodos] = useState(props.todos);
+    const todos = props.todos;
+    const handleDelete = props.handleDelete;
+    const handleDeleteCompleted = props.handleDeleteCompleted;
+
+    const getActions = todo => (<button onClick={() => { handleDelete(todo) }}> <IconDelete /> </button>);
 
     return (
-        <ul>
-            {todos.filter(todo => todo.completed).map((todo) => (
-                <ListItem item={todo} />
-            ))}
-        </ul>
+        <>
+            <ul>
+                {todos.filter(todo => todo.completed).map((todo) => (
+                    <ListItem item={todo} actions={getActions(todo)} />
+                ))}
+            </ul>
+            <DeleteAllButton handleClick={handleDeleteCompleted}/>
+        </>
     );
 };
 

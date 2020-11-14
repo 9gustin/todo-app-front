@@ -1,3 +1,5 @@
-const IconDelete = () => <span>*icono tachito*</span>
+import { MdDelete } from "react-icons/md";
+
+const IconDelete = () => <MdDelete/>
 
 export {IconDelete};
