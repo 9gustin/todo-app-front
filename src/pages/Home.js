@@ -2,6 +2,8 @@ import Header from '../containers/header';
 import Main from '../containers/main';
 import Footer from '../containers/footer';
 import { useState } from 'react';
+import { stringComparator } from '../utils/stringComparator';
+import Todo from '../models/todo';
 
 const Home = props => {
 
@@ -21,9 +23,22 @@ const Home = props => {
     setGlobalProps(props => ({ ...props, todos }));
   }
 
-  const addTodo = todo => {
-    let todos = [...globalProps.todos, todo];
-    setGlobalProps(props => ({ ...props, todos }));
+  const addTodo = jsonTodo => {
+    if (jsonTodo.name && jsonTodo.name.trim() !== '') {
+
+      if (!globalProps.todos.some(t => stringComparator(t.name, jsonTodo.name))) {
+        let todo = new Todo(jsonTodo);
+        todo.initAsNew();
+
+        let todos = [...globalProps.todos, todo];
+
+        setGlobalProps(props => ({ ...props, todos }));
+      }
+
+      return true;
+    }
+
+    return false;
   }
 
   const toggleTodoCompleted = todo => {

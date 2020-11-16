@@ -9,7 +9,7 @@ const AllList = (props) => {
     return (
         <ul>
             {todos.map((todo) => (
-                <ListItem item={todo} handleClick={handleToggleCompleted}/>
+                <ListItem key={`ListItem-${todo.id}`} item={todo} handleClick={handleToggleCompleted}/>
             ))}
         </ul>
     );
@@ -35,15 +35,15 @@ const CompletedList = (props) => {
     const handleDeleteCompleted = props.handleDeleteCompleted;
 
     const getActions = todo => (<button onClick={() => { handleDelete(todo) }}> <IconDelete /> </button>);
-
+    const getTodos = () => todos.filter(todo => todo.completed);
     return (
         <>
             <ul>
-                {todos.filter(todo => todo.completed).map((todo) => (
+                {getTodos().map((todo) => (
                     <ListItem item={todo} actions={getActions(todo)} handleClick={handleToggleCompleted}/>
                 ))}
             </ul>
-            <DeleteAllButton handleClick={handleDeleteCompleted}/>
+            {getTodos() && getTodos().length > 0 ? <DeleteAllButton handleClick={handleDeleteCompleted}/> : ''}
         </>
     );
 };

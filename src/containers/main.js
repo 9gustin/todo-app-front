@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { FormTodo } from '../components/forms/form';
 import {ActiveList, CompletedList, AllList} from '../components/lists/list';
 
@@ -28,7 +27,7 @@ const Main = props => {
 
     return (
         <main>
-            <FormTodo />
+            <FormTodo addTodo={todoFunctions.addTodo}/>
             {getTodoList()}
         </main>
     );

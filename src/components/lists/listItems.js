@@ -6,9 +6,9 @@ const ListItem = props => {
     const actions = props.actions;
 
     return (
-        <li>
+        <li key={`ListItem-${item.id}`}>
             <CheckboxInput id={`checkbox-${item.id}`} handleChange={() => handleClick(item)} checked={item.completed}/>
-            <label for={`checkbox-${item.id}`} >{item.name}</label>
+            <label htmlFor={`checkbox-${item.id}`} >{item.name}</label>
             {actions}
         </li>
     );

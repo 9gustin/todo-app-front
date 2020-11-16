@@ -11,7 +11,7 @@ const Navbar = props => {
     return (
         <nav>
             <ul>
-                {items.map(item => (<NavbarItem item={item} />))}
+                {items.map(item => (<NavbarItem item={item} key={`NavbarItem-${item.name}`}/>))}
             </ul>
         </nav>
     );
