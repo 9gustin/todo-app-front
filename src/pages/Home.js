@@ -13,6 +13,7 @@ const Home = props => {
     let props = { ...globalProps, activeTab: tabName };
     setGlobalProps(props);
   }
+  
   const deleteTodo = todo => {
     let todos = globalProps.todos.filter(t => t.id !== todo.id);
     setGlobalProps(props => ({ ...props, todos }));
@@ -33,9 +34,8 @@ const Home = props => {
         let todos = [...globalProps.todos, todo];
 
         setGlobalProps(props => ({ ...props, todos }));
+        return true;
       }
-
-      return true;
     }
 
     return false;
