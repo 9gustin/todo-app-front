@@ -1,4 +1,4 @@
-import {IconDelete} from '../texts/icons';
+import {IconDelete} from '../texts/icons.js';
 
 const TextInput = props => <input placeholder={props.placeholder} className="mr-4 w-6/12 text-sm hadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-normal" type="text" value={props.value} onChange={props.handleChange}/>
 

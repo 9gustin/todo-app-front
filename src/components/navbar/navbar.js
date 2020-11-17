@@ -1,4 +1,4 @@
-import {NavbarItem} from './navbarItems';
+import {NavbarItem} from './navbarItems.js';
 
 const Navbar = props => {
     const handleTabChange = props.handleTabChange;

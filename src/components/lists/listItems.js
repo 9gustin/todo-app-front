@@ -1,4 +1,4 @@
-import {CheckboxInput} from '../forms/formItems';
+import {CheckboxInput} from '../forms/formItems.js';
 
 const ListItem = props => {
     const item = props.item;

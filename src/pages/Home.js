@@ -1,9 +1,9 @@
-import Header from '../containers/header';
-import Main from '../containers/main';
-import Footer from '../containers/footer';
+import Header from '../containers/header.js';
+import Main from '../containers/main.js';
+import Footer from '../containers/footer.js';
 import { useState } from 'react';
-import { stringComparator } from '../utils/stringComparator';
-import Todo from '../models/todo';
+import { stringComparator } from '../utils/stringComparator.js';
+import Todo from '../models/todo.js';
 
 const Home = props => {
 

@@ -1,4 +1,4 @@
-import { getId } from '../utils/idGenerator';
+import { getId } from '../utils/idGenerator.js';
 
 export default class Todo{
     _id;

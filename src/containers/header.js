@@ -1,5 +1,5 @@
-import {PrincipalTitle} from '../components/texts/titles';
-import {Navbar} from '../components/navbar/navbar';
+import {PrincipalTitle} from '../components/texts/titles.js';
+import {Navbar} from '../components/navbar/navbar.js';
 
 const Header = props => {
     return (

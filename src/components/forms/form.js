@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Todo from '../../models/todo';
-import {AddButton, TextInput} from './formItems';
+import Todo from '../../models/todo.js';
+import {AddButton, TextInput} from './formItems.js';
 
 const FormTodo = props => {
     const addTodo = props.addTodo;

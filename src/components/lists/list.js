@@ -1,6 +1,6 @@
-import { ListItem } from "./listItems";
-import { IconDelete } from "../texts/icons";
-import { DeleteAllButton } from "../forms/formItems";
+import { ListItem } from "./listItems.js";
+import { IconDelete } from "../texts/icons.js";
+import { DeleteAllButton } from "../forms/formItems.js";
 
 const AllList = (props) => {
     const todos = props.todos;

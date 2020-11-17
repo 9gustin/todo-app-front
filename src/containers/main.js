@@ -1,5 +1,5 @@
-import { FormTodo } from '../components/forms/form';
-import { ActiveList, CompletedList, AllList } from '../components/lists/list';
+import { FormTodo } from '../components/forms/form.js';
+import { ActiveList, CompletedList, AllList } from '../components/lists/list.js';
 
 const Main = props => {
     const todos = props.todos;
