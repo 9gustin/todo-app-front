@@ -3,9 +3,11 @@ import {Navbar} from '../components/navbar/navbar';
 
 const Header = props => {
     return (
-        <header>
+        <header className="w-full flex justify-center mb-6">
+            <div>
             <PrincipalTitle text={props.title}/>
-            <Navbar handleTabChange={props.handleTabChange}/>
+            <Navbar handleTabChange={props.handleTabChange} tabs={props.tabs}/>
+            </div>
         </header>
     );
 };

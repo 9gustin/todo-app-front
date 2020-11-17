@@ -5,12 +5,12 @@ import "./styles/index.css";
 
 const initialProps = {
   title: '#TODO',
-  todos: [
-    // new Todo({ id: 1, name: 'Learn react', completed: true }),
-    // new Todo({ id: 2, name: 'Love mate', completed: true }),
-    // new Todo({ id: 3, name: 'other todo', completed: false })
+  tabs: [
+    { name: 'All', selected: true },
+    { name: 'Active', selected: false  },
+    { name: 'Completed', selected: false  }
   ],
-  activeTab: 'all', //possible values: all, active, completed
+  todos: [],
   footerText: '9gustin @ DevChallenges.io'
 };
 

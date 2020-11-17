@@ -20,8 +20,8 @@ const FormTodo = props => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextInput handleChange={handleInputChange} value={todo.name}/>
+        <form className="text-center" onSubmit={handleSubmit}>
+            <TextInput placeholder="add details" handleChange={handleInputChange} value={todo.name}/>
             <AddButton type="submit"/>
         </form>
     );

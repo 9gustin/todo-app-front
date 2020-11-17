@@ -2,16 +2,12 @@ import {NavbarItem} from './navbarItems';
 
 const Navbar = props => {
     const handleTabChange = props.handleTabChange;
-    const items = [
-        {name: 'All', handleClick: () => {handleTabChange('all')}},
-        {name: 'Active', handleClick: () => {handleTabChange('active')}},
-        {name: 'Completed', handleClick: () => {handleTabChange('completed')}}
-    ];
+    const tabs = props.tabs; 
 
     return (
         <nav>
-            <ul>
-                {items.map(item => (<NavbarItem item={item} key={`NavbarItem-${item.name}`}/>))}
+            <ul className="flex">
+                {tabs.map(item => (<NavbarItem handleClick={() => {handleTabChange(item.name);}}item={item} key={`NavbarItem-${item.name}`}/>))}
             </ul>
         </nav>
     );

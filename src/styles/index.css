@@ -19200,6 +19200,10 @@ video {
   animation: bounce 1s infinite;
 }
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

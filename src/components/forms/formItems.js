@@ -1,13 +1,13 @@
 import {IconDelete} from '../texts/icons';
 
-const TextInput = props => <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" value={props.value} onChange={props.handleChange}/>
+const TextInput = props => <input placeholder={props.placeholder} className="mr-4 w-6/12 text-sm hadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-normal" type="text" value={props.value} onChange={props.handleChange}/>
 
-const CheckboxInput = props => <input type="checkbox" checked={props.checked} onChange={props.handleChange} id={props.id}/>
+const CheckboxInput = props => <input className={props.className} type="checkbox" checked={props.checked} onChange={props.handleChange} id={props.id}/>
 
 const Button = props => <button className={`${props.className}`} type={props.type ? props.type : "button"} onClick={props.handleClick}>{props.children}</button>
 
-const AddButton = props => <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type={props.type} handleClick={props.handleClick}>{props.text || "Add"}</Button>
+const AddButton = props => <Button className="bg-blue-600 hover:bg-blue-700 text-white text-xs py-3 px-8 rounded" type={props.type} handleClick={props.handleClick}>{props.text || "Add"}</Button>
 
-const DeleteAllButton = props => <Button handleClick={props.handleClick}><IconDelete/> {props.text || "Delete all"}</Button>
+const DeleteAllButton = props => <Button className={props.className} handleClick={props.handleClick}><IconDelete/> {props.text || "Delete all"}</Button>
 
 export {TextInput, AddButton, DeleteAllButton, CheckboxInput};

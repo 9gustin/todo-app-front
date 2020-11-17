@@ -22,7 +22,7 @@ const ActiveList = (props) => {
     return (
         <ul>
             {todos.filter(todo => !todo.completed).map((todo) => (
-                <ListItem item={todo} handleClick={handleToggleCompleted}/>
+                <ListItem key={`ListItem-${todo.id}`} item={todo} handleClick={handleToggleCompleted}/>
             ))}
         </ul>
     );
@@ -34,16 +34,16 @@ const CompletedList = (props) => {
     const handleToggleCompleted = props.handleToggleCompleted;
     const handleDeleteCompleted = props.handleDeleteCompleted;
 
-    const getActions = todo => (<button onClick={() => { handleDelete(todo) }}> <IconDelete /> </button>);
+    const getActions = todo => (<button key={`DeleteButton-${todo.id}`} className="flex items-center" onClick={() => { handleDelete(todo) }}> <IconDelete /> </button>);
     const getTodos = () => todos.filter(todo => todo.completed);
     return (
         <>
             <ul>
                 {getTodos().map((todo) => (
-                    <ListItem item={todo} actions={getActions(todo)} handleClick={handleToggleCompleted}/>
+                    <ListItem key={`ListItem-${todo.id}`} item={todo} actions={getActions(todo)} handleClick={handleToggleCompleted}/>
                 ))}
             </ul>
-            {getTodos() && getTodos().length > 0 ? <DeleteAllButton handleClick={handleDeleteCompleted}/> : ''}
+            {getTodos() && getTodos().length > 0 ? <DeleteAllButton className="mt-5 float-right flex items-center bg-red-600 hover:bg-red-700 text-white text-xs py-2 px-4 rounded" handleClick={handleDeleteCompleted}/> : ''}
         </>
     );
 };

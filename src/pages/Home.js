@@ -10,10 +10,18 @@ const Home = props => {
   const [globalProps, setGlobalProps] = useState(props.initialProps);
 
   const handleTabChange = tabName => {
-    let props = { ...globalProps, activeTab: tabName };
-    setGlobalProps(props);
+    let tabs = globalProps.tabs.map(tab =>{
+      if(stringComparator(tab.name, tabName)) tab.selected = true;
+      else tab.selected = false;
+
+      return tab;
+    });
+
+    setGlobalProps(props => ({ ...props, tabs }));
   }
   
+  const getActiveTab = () => globalProps.tabs.find(tab => tab.selected)?.name.toLowerCase();
+
   const deleteTodo = todo => {
     let todos = globalProps.todos.filter(t => t.id !== todo.id);
     setGlobalProps(props => ({ ...props, todos }));
@@ -54,8 +62,8 @@ const Home = props => {
 
   return (
     <>
-      <Header title={globalProps.title} handleTabChange={handleTabChange} />
-      <Main todos={globalProps.todos} activeTab={globalProps.activeTab} todoFunctions={{ addTodo, toggleTodoCompleted, deleteTodo, deleteCompleted }} />
+      <Header title={globalProps.title} handleTabChange={handleTabChange} tabs={globalProps.tabs}/>
+      <Main todos={globalProps.todos} activeTab={getActiveTab()} todoFunctions={{ addTodo, toggleTodoCompleted, deleteTodo, deleteCompleted }} />
       <Footer text={globalProps.footerText} />
     </>
   );
