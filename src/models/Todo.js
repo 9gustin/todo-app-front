@@ -7,9 +7,10 @@ export default class Todo{
     constructor(config){
         if(config){
             this._id = config.id;
-            this._name = config.name;
+            this._name = config.name || '';
             this._completed = config.completed;
         }
+        else this._name = '';
     }
     initAsNew(){
         this._completed = false;
