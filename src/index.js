@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Todo from './models/todo';
 import Home from './pages/home';
+import "./styles/index.css";
 
 const initialProps = {
   title: '#TODO',

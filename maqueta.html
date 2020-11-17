@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body class="flex flex-col h-full  overflow-hidden">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+    <header class="w-full flex justify-center mb-6">
+        <div>
+            <h1 class="text-3xl text-center py-8 font-bold">#TODO</h1>
+            <nav>
+                <ul class="flex">
+                    <li class="mx-6">
+                        <a class="text-sm font-semibold text-center w-32 inline-block border border-blue-500 rounded py-1 px-3 bg-blue-600 text-white"
+                            href="#">All</a>
+                    </li>
+                    <li class="mx-6">
+                        <a class="text-sm font-semibold text-center w-32 inline-block border border-white rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
+                            href="#">Active</a>
+                    </li>
+                    <li class="mx-6">
+                        <a class="text-sm font-semibold text-center w-32 inline-block border border-white rounded hover:border-gray-200 hover:bg-gray-200 py-1 px-3"
+                            href="#">Completed</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+    <main class="w-full flex justify-center">
+        <div class="w-6/12">
+            <form class="text-center">
+                <input type="text" placeholder="add details"
+                    class="mr-4 w-6/12 text-sm hadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-normal">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white text-xs py-3 px-8 rounded">Add</button>
+            </form>
+            <div class="w-8/12 m-auto pt-2">
+                <ul>
+                    <li class="px-1 py-2 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <input type="checkbox" class="mr-3" checked="true">
+                            <strike><label class="font-medium" for="">todo item</label></strike>
+                            
+                        </span>
+                        <button class="flex items-center "><span class="material-icons">
+                                delete
+                            </span></button>
+                    </li>
+                    <li class="px-1 py-2 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <input type="checkbox" class="mr-3">
+                            <label class="font-medium" for="">todo item</label>
+                        </span>
+                        <button class="flex items-center "><span class="material-icons">
+                                delete
+                            </span></button>
+                    </li>
+                    <li class="px-1 py-2 flex items-center justify-between">
+                        <span class="flex items-center">
+                            <input type="checkbox" class="mr-3">
+                            <label class="font-medium" for="">todo item</label>
+                        </span>
+                        <button class="flex items-center "><span class="material-icons">
+                                delete
+                            </span></button>
+                    </li>
+                    
+                </ul>
+                <button class="mt-5 float-right flex items-center bg-red-600 hover:bg-red-700 text-white text-xs py-2 px-4 rounded">
+                    <span class="material-icons">
+                        delete
+                    </span>
+                    Delete all
+                </button>
+            </div>
+        </div>
+
+    </main>
+    <footer class="absolute bottom-0 left-0 right-0 text-center py-4">
+        <p class="text-gray-500">footer text</p>
+    </footer>
+</body>
+
+</html>
