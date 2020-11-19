@@ -4,14 +4,23 @@ import Footer from '../containers/footer.js';
 import { useState } from 'react';
 import { stringComparator } from '../utils/stringComparator.js';
 import Todo from '../models/todo.js';
+import Tab from '../models/tab.js';
 
-const Home = props => {
-
-  const [globalProps, setGlobalProps] = useState(props.initialProps);
+const Home = () => {
+  const [globalProps, setGlobalProps] = useState({
+    title: '#TODO',
+    tabs: [
+      new Tab({ name: 'All', selected: true }),
+      new Tab({ name: 'Active', selected: false }),
+      new Tab({ name: 'Completed', selected: false })
+    ],
+    todos: [],
+    footerText: '9gustin @ DevChallenges.io'
+  });
 
   const handleTabChange = tabName => {
-    let tabs = globalProps.tabs.map(tab =>{
-      if(stringComparator(tab.name, tabName)) tab.selected = true;
+    let tabs = globalProps.tabs.map(tab => {
+      if (stringComparator(tab.name, tabName)) tab.selected = true;
       else tab.selected = false;
 
       return tab;
@@ -19,8 +28,8 @@ const Home = props => {
 
     setGlobalProps(props => ({ ...props, tabs }));
   }
-  
-  const getActiveTab = () => globalProps.tabs.find(tab => tab.selected)?.name.toLowerCase();
+
+  const getActiveTab = () => globalProps.tabs.find(tab => tab.selected);
 
   const deleteTodo = todo => {
     let todos = globalProps.todos.filter(t => t.id !== todo.id);
@@ -62,7 +71,7 @@ const Home = props => {
 
   return (
     <>
-      <Header title={globalProps.title} handleTabChange={handleTabChange} tabs={globalProps.tabs}/>
+      <Header title={globalProps.title} handleTabChange={handleTabChange} tabs={globalProps.tabs} />
       <Main todos={globalProps.todos} activeTab={getActiveTab()} todoFunctions={{ addTodo, toggleTodoCompleted, deleteTodo, deleteCompleted }} />
       <Footer text={globalProps.footerText} />
     </>
