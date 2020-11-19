@@ -14,7 +14,7 @@ const TodoList = props => {
     return (
         <>
             <ul>
-                {todos.map((todo) => (
+                {todos?.map((todo) => (
                     <ListItem key={`ListItem-${todo.id}`} item={todo} actions={getActions(todo)} handleClick={handleToggleCompleted}/>
                 ))}
             </ul>

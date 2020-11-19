@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Todo from '../../models/todo.js';
 import {AddButton, TextInput} from './formItems.js';
+import {TodosContext} from '../../context/todoContext';
 
 const FormTodo = props => {
-    const addTodo = props.addTodo;
+    const {addTodo} = useContext(TodosContext); 
     const [todo, setTodo] = useState(new Todo());
     
     const handleSubmit = evt => {
