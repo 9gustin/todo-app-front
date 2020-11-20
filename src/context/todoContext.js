@@ -2,10 +2,11 @@ import { stringComparator } from '../utils/stringComparator';
 import { createContext, useState } from "react";
 import Todo from '../models/todo';
 
-const TodosContext = createContext({todos: []});
+const TodosContext = createContext({});
 
 const TodosProvider = ({ children }) => {
     const [todos, setTodos] = useState([]);
+
 
     const deleteTodo = todo => {
         setTodos(actualTodos => (actualTodos.filter(t => t.id !== todo.id)));
@@ -31,9 +32,10 @@ const TodosProvider = ({ children }) => {
     }
 
     const toggleTodoCompleted = todo => {
-
-        setTodos(actualTodos => actualTodos.map(t => {
-            if (t.id === todo.id) t.toggleCompleted();
+        setTodos(todos.map(t => {
+            if (t.id === todo.id) {
+                t.toggleCompleted();
+            }
             return t;
         }));
     }
