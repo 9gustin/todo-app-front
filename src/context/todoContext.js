@@ -7,7 +7,6 @@ const TodosContext = createContext({});
 const TodosProvider = ({ children }) => {
     const [todos, setTodos] = useState([]);
 
-
     const deleteTodo = todo => {
         setTodos(actualTodos => (actualTodos.filter(t => t.id !== todo.id)));
     }

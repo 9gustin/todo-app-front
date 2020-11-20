@@ -1,7 +1,7 @@
 import Header from '../containers/header.js';
 import Main from '../containers/main.js';
 import Footer from '../containers/footer.js';
-import { useReducer, useState } from 'react';
+import { useReducer } from 'react';
 import { stringComparator } from '../utils/stringComparator.js';
 import {TodosProvider} from '../context/todoContext';
 import Tab from '../models/tab.js';
