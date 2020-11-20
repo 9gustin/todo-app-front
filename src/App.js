@@ -1,10 +1,10 @@
-import Header from '../containers/header.js';
-import Main from '../containers/main.js';
-import Footer from '../containers/footer.js';
+import Header from './containers/header.js';
+import Main from './containers/main.js';
+import Footer from './containers/footer.js';
 import { useReducer } from 'react';
-import { stringComparator } from '../utils/stringComparator.js';
-import {TodosProvider} from '../context/todoContext';
-import Tab from '../models/tab.js';
+import { stringComparator } from './utils/stringComparator.js';
+import {TodosProvider} from './context/todoContext';
+import Tab from './models/tab.js';
 
 const initialState = {
   title: '#TODO',
@@ -16,7 +16,7 @@ const initialState = {
   footerText: '9gustin @ DevChallenges.io'
 };
 
-const homeStateReducer = (state, action) => {
+const appStateReducer = (state, action) => {
   switch(action.type){
     case 'TAB_CHANGE':
       return {
@@ -32,8 +32,8 @@ const homeStateReducer = (state, action) => {
   }
 }
 
-const Home = () => {
-  const [globalProps, dispatchGlobalProps] = useReducer(homeStateReducer, initialState);
+const App = () => {
+  const [globalProps, dispatchGlobalProps] = useReducer(appStateReducer, initialState);
 
   const handleTabChange = tabName => {
     dispatchGlobalProps({type:'TAB_CHANGE', payload: tabName});
@@ -52,4 +52,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default App;
