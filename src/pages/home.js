@@ -14,7 +14,6 @@ const Home = () => {
       new Tab({ name: 'Active', selected: false }),
       new Tab({ name: 'Completed', selected: false })
     ],
-    todos: [],
     footerText: '9gustin @ DevChallenges.io'
   });
 
