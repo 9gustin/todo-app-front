@@ -1,6 +1,6 @@
 import {IconDelete} from '../texts/icons.js';
 
-const TextInput = props => <input placeholder={props.placeholder} className="mr-4 w-6/12 text-sm hadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-normal" type="text" value={props.value} onChange={props.handleChange}/>
+const TextInput = props => <input ref={props.reference} placeholder={props.placeholder} className="mr-4 w-6/12 text-sm hadow appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline font-normal" type="text" value={props.value} onChange={props.handleChange}/>
 
 const CheckboxInput = props => <input className={props.className} type="checkbox" checked={props.checked} onChange={props.handleChange} id={props.id}/>
 
