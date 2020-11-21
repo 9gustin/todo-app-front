@@ -3,7 +3,7 @@ import Main from './containers/main.js';
 import Footer from './containers/footer.js';
 import { useReducer } from 'react';
 import { stringComparator } from './utils/stringComparator.js';
-import {TodosProvider} from './context/todoContext';
+import TodosProvider from './context/todos/todoProvider';
 import Tab from './models/tab.js';
 
 const initialState = {

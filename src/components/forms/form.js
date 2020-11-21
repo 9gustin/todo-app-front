@@ -1,16 +1,16 @@
 import { useState, useContext, useRef } from 'react';
 import Todo from '../../models/todo.js';
 import {AddButton, TextInput} from './formItems.js';
-import {TodosContext} from '../../context/todoContext';
+import TodosContext from '../../context/todos/todoContext';
 
 const FormTodo = props => {
     const {addTodo} = useContext(TodosContext); 
     const [todo, setTodo] = useState(new Todo());
     const inputTodo = useRef(null);
     
-    const handleSubmit = evt => {
+    const handleSubmit = async evt => {
         evt.preventDefault();
-        let result = addTodo(todo);
+        let result = await addTodo(todo);
 
         if(result) setTodo(new Todo());
         else alert('mm vs desis')

@@ -1,12 +1,10 @@
-import { getId } from '../utils/idGenerator.js';
-
 export default class Todo{
     _id;
     _name;
     _completed;
     constructor(config){
         if(config){
-            this._id = config.id;
+            this._id = config.id || config._id;
             this._name = config.name || '';
             this._completed = config.completed;
         }
@@ -14,7 +12,6 @@ export default class Todo{
     }
     initAsNew(){
         this._completed = false;
-        this._id = getId();
     }
     toggleCompleted(){
         this._completed = !this._completed;
@@ -28,7 +25,17 @@ export default class Todo{
     get completed(){
         return this._completed;
     }
+    set completed (value) {
+        return this._completed = value;
+    }
     get name(){
         return this._name;
+    }
+    toAPI(){
+        return {
+            _id: this._id,
+            name: this._name,
+            completed: this._completed
+        }
     }
 }
